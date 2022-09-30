@@ -1,3 +1,4 @@
+/* header */
 html{
     scroll-behavior: smooth;
 }
@@ -67,4 +68,141 @@ a{
     display: flex;
     align-items: center;
     color: black;
+}
+
+
+/* content1 */
+.tempatfoto{
+    width: 542px;
+    height: 466px;
+    margin-left: 250px;
+    margin-top: -25px;
+    position: absolute;
+    border-radius: 42px;
+    background-color: #F4F4F4;
+}
+.tempatfoto img{
+    width: 542px;
+    height: 466px;
+    border-radius: 42px;
+}
+.text{
+    width: 576px;
+    height: 404px;
+    margin-left: 750px;
+    margin-top: 85px;
+    border-radius: 15px;
+    z-index: -1;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    background-color: #FFFCFC;
+}
+.text p:first-child{
+    margin-left: 150px;
+    margin-top: 150px;
+    padding-top: 100px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+.text p:last-child{
+    display: flex;
+    padding-top: 100px;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* content2 */
+.container2{
+    margin-top: 150px;
+}
+.subjudul{
+    display: flex;
+    margin-left: 200px;
+    align-items: center;
+ }
+.subjudul img{
+     width: 58px;
+     height: 58px;
+ }
+ .subjudul p{
+     font-weight: bold;
+     font-size: 50px;
+     margin: 0;
+     font-family: 'Ubuntu', sans-serif;
+ }
+ .background{
+     width: 1265px;
+     height: 802px;
+     margin-left: 125px;
+     background-color: #F4F4F4;
+     border-radius: 70px;
+     display: flex;
+     justify-content: center;
+     gap: 100px;
+     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+ }
+ .event1{
+     width: 489px;
+     height: 611px;
+     margin-top: 100px;
+ }
+ .event1 img{
+     width: 489px;
+     height: 611px;
+     border-radius: 10px;
+ }
+ .event2{
+     width: 489px;
+     height: 611px;
+     margin-top: 100px;
+ }
+ .event2 img{
+     width: 489px;
+     height: 614px;
+     border-radius: 10px;
+ }
+
+ /* content3 */
+ .container3{
+    margin-top: 100px;
+
+ }
+ .disease{
+    width: 100%;
+    height: 340px;
+    background-image:  linear-gradient(120deg, #50A8FA 10%,#4ED6BD 80%);
+    display: flex;
+}
+.disease p{
+    margin-top: 60px;
+    margin-left: 10px;
+    font-size: 25px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+}
+.disease img{
+    width: 76px;
+    height: 77px;
+    margin-left: 38px;
+    margin-top: 31px;
+}
+.penyakit{
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin-top: -200px;
+    text-align: center;
+}
+.disease1 img{
+    width: 95px;
+    height: 95px;
+}
+.disease1 p{
+    font-weight: bold;
+    font-family: 'Ubuntu', sans-serif;
+    margin-top: 50px;
 }
