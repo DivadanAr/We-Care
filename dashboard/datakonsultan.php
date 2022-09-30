@@ -1,21 +1,5 @@
 <?php
     include 'koneksi.php';
-    $sql_dokter = "SELECT * FROM data_dokter";
-    $data_dokter = mysqli_query($connect, $sql_dokter);
-    $jumlah_dokter = mysqli_num_rows($data_dokter);
-
-    $sql_pasien = "SELECT * FROM data_pasien";
-    $data_pasien = mysqli_query($connect, $sql_pasien);
-    $jumlah_pasien = mysqli_num_rows($data_pasien);
-
-    //ambil data mahasiswa dimana jenis kelamin adalah laki-laki
-    $dokter = mysqli_query($connect, "SELECT * FROM data_dokter");
-
-    //ambil data mahasiswa dimana jenis kelamin adalah perempuan
-    $pasien = mysqli_query($connect, "SELECT * FROM data_pasien");
-
-    $sql_konsultan_terbaru = "SELECT * FROM data_konsul ORDER BY id_dokter DESC LIMIT 3";
-    $data_konsultan = mysqLi_query($connect, $sql_konsultan_terbaru);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,14 +23,18 @@
         <div class="sidebar">
         <img src="assets/hospital.png" alt="">
         <ul class="menu">
-            <li><a href="dashboard.php"><img src="assets/home.png" alt=""></a></li>
-            <li><a href="datadokter.php"><img src="assets/doctor.png" alt=""></a></li>
-            <li><a href="datapasien.php"><img src="assets/patient.png" alt=""></a></li>
-            <li><a href="datakonsultan.php"><img src="assets/konsul.png" alt=""></a></li>
+            <li><a href="dashboard.php"><img src="assets/home.png" alt=""><p class="menutext">DASHBOARD</p></a></li>
+            <li><a href="datadokter.php"><img src="assets/doctor.png" alt=""><p class="menutext2">DATA DOKTER</p></a></li>
+            <li><a href="datapasien.php"><img src="assets/patient.png" alt=""><p class="menutext3">DATA PASIEN</p></a></li>
+            <li><a href="datakonsul.php"><img src="assets/konsul.png" alt=""><p class="menutext4">DATA KONSULTAN</p></a></li>
+            <li><a href="dataevent.php"><img src="assets/event.png" alt=""><p class="menutext4">DATA EVENT</p></a></li>
+            <li><a href="datapenyakit.php"><img src="assets/penyakit.png" alt=""><p class="menutext4">DATA PENYAKIT</p></a></li>
+            <li><a href="datakomentar.php"><img src="assets/comment.png" alt=""><p class="menutext4">DATA COMMENT</p></a></li>
         </ul>
         </div>
         <div class="navbar">
-            <button class="menu"><img src="assets/menu.png" alt=""></button>
+            <button class="menu" id="toggle-sidebar" onclick="myFunction()"><img src="assets/menu.png" alt=""></button>
+            <script src="main.js"></script>
         </div>
     </div>
     <div class="container">
@@ -55,10 +43,9 @@
             <div class="table">
                 <table class="table1">
                     <tr>
-                        <th>ID PASIEN</th>
-                        <th>NAMA PASIEN</th>
-                        <th>ID DOKTER</th>
+                        <th>ID KONSUL</th>
                         <th>NAMA DOKTER</th>
+                        <th>NAMA PASIEN</th>
                         <th>KELUHAN</th>
                         <th>TANGGAL KONSUL</th>
                         <th>ACTION</th>
@@ -67,17 +54,17 @@
                     $sql = "SELECT * FROM data_pasien";
                     $query = mysqli_query($connect, $sql);
 
-                    while($dokter = mysqli_fetch_array($query)){
-                        echo "<tr>
-                        <td>$dokter[id_pasien]</td>
-                        <td>$dokter[nama_pasien]</td>
-                        <td>$dokter[id_dokter]</td>
-                        <td>$dokter[nama_dokter]</td>
-                        <td>$dokter[keluhan]</td>
-                        <td>$dokter[tanggal_konsul]</td>
+                    while($konsul = mysqli_fetch_array($query)){
+                        echo "
+                    <tr>
+                        <td>$konsul[id_konsul]</td>
+                        <td>$konsul[nama_konsul]</td>
+                        <td>$konsul[nama_pasien]</td>
+                        <td>$konsul[Keluhan]</td>
+                        <td>$konsul[tanggal_konsul]</td>
                         <td class='action'>
-                            <a href='editkonsultan.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/edit.png'></a>
-                            <a href='hapuskonsultan.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/hapus.png'></a>
+                            <a href='formeditkonsul.php?id_konsul=".$konsul['id_konsul']."'><img src='assets/edit.png'></a>
+                            <a href='hapuskonsultan.php?id_konsul=".$konsul['id_konsul']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }

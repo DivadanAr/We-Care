@@ -14,7 +14,7 @@
     //ambil data mahasiswa dimana jenis kelamin adalah perempuan
     $pasien = mysqli_query($connect, "SELECT * FROM data_pasien");
 
-    $sql_konsultan_terbaru = "SELECT * FROM data_konsul ORDER BY id_dokter DESC LIMIT 3";
+    $sql_konsultan_terbaru = "SELECT * FROM data_konsul ORDER BY id_konsul DESC LIMIT 3";
     $data_konsultan = mysqLi_query($connect, $sql_konsultan_terbaru);
 ?>
 <!DOCTYPE html>
@@ -43,6 +43,9 @@
             <li><a href="datadokter.php"><img src="assets/doctor.png" alt=""><p class="menutext2">DATA DOKTER</p></a></li>
             <li><a href="datapasien.php"><img src="assets/patient.png" alt=""><p class="menutext3">DATA PASIEN</p></a></li>
             <li><a href="datakonsultan.php"><img src="assets/konsul.png" alt=""><p class="menutext4">DATA KONSULTAN</p></a></li>
+            <li><a href="dataevent.php"><img src="assets/event.png" alt=""><p class="menutext4">DATA EVENT</p></a></li>
+            <li><a href="datapenyakit.php"><img src="assets/penyakit.png" alt=""><p class="menutext4">DATA PENYAKIT</p></a></li>
+            <li><a href="datakomentar.php"><img src="assets/comment.png" alt=""><p class="menutext4">DATA COMMENT</p></a></li>
         </ul>
         </div>
         <div class="navbar">

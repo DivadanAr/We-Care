@@ -39,35 +39,27 @@
     </div>
     <div class="container">
         <div class="card-content">
-            <p>Data Pasien</p>
+            <p>Data komentar</p>
             <div class="table">
                 <table class="table1">
                     <tr>
-                        <th>ID</th>
                         <th>NAMA</th>
-                        <th>UMUR</th>
-                        <th>KELAMIN</th>
-                        <th>PENYAKIT</th>
-                        <th>TELEPON</th>
-                        <th>ALAMAT</th>
-                        <th>ACTION</th>
+                        <th>EMAIL</th>
+                        <th>KOMENTAR</th>
+                        <th>EDIT</th>
                     </tr>
                     <?php
-                    $sql = "SELECT * FROM data_pasien";
+                    $sql = "SELECT * FROM komentar_pasien";
                     $query = mysqli_query($connect, $sql);
 
-                    while($dokter = mysqli_fetch_array($query)){
+                    while($event = mysqli_fetch_array($query)){
                         echo "<tr>
-                        <td>$dokter[id_pasien]</td>
-                        <td>$dokter[nama_pasien]</td>
-                        <td>$dokter[umur]</td>
-                        <td>$dokter[jenis_kelamin]</td>
-                        <td>$dokter[penyakit]</td>
-                        <td>$dokter[telepon]</td>
-                        <td>$dokter[alamat]</td>
+                        <td>$event[nama_pasien]</td>
+                        <td>$event[email]</td>
+                        <td>$event[komentar]</td>
                         <td class='action'>
-                            <a href='editdokter.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/edit.png'></a>
-                            <a href='hapusdokter.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/hapus.png'></a>
+                            <a href='editevent.php?id_pasien=".$event['id_pasien']."'><img src='assets/edit.png'></a>
+                            <a href='hapusevent.php?id_pasien=".$event['id_pasien']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }
