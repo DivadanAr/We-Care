@@ -59,7 +59,7 @@
                         <td>$event[nama_event]</td>
                         <td>$event[gambar]</td>
                         <td class='action'>
-                            <a href='hapus.php?nama_pasien=".$event['nama_pasien']."'><img src='assets/hapus.png'></a>
+                            <a href='hapus.php?id=".$event['id']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }

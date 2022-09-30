@@ -40,9 +40,6 @@
     <div class="container">
         <div class="card-content">
             <p>Data Konsultan</p>
-            <div class="button">
-                <div><p><a href="formtambahkonsul.php" class="btn-tmbh">Tambah Data Konsultan</a></p></div>
-            </div>
             <div class="table">
                 <table class="table1">
                     <tr>
@@ -54,16 +51,16 @@
                         <th>ACTION</th>
                     </tr>
                     <?php
-                    $sql = "SELECT * FROM data_pasien";
+                    $sql = "SELECT * FROM data_konsul";
                     $query = mysqli_query($connect, $sql);
 
                     while($konsul = mysqli_fetch_array($query)){
                         echo "
                     <tr>
                         <td>$konsul[id_konsul]</td>
-                        <td>$konsul[nama_konsul]</td>
+                        <td>$konsul[nama_dokter]</td>
                         <td>$konsul[nama_pasien]</td>
-                        <td>$konsul[Keluhan]</td>
+                        <td>$konsul[keluhan]</td>
                         <td>$konsul[tanggal_konsul]</td>
                         <td class='action'>
                             <a href='formeditkonsul.php?id_konsul=".$konsul['id_konsul']."'><img src='assets/edit.png'></a>

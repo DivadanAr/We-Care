@@ -53,9 +53,9 @@ if(mysqli_num_rows($query)  < 1){
             <div class="container">
         <div class="edit-content">
             <div class="judul">
-                <p>Tambah Data Konsul</p>
+                <p>Edit Data Konsul</p>
             </div>
-            <form action="simpan.php" method="post">
+            <form action="editkonsul.php" method="post">
             <div class="form-edit">
                 <table>
                     <tr>
@@ -90,7 +90,7 @@ if(mysqli_num_rows($query)  < 1){
             </table>
             <div class="btn-simpan-cancel">
                 <a class="" href="datakonsuk.php">cancel</a>
-                    <input type="submit" name="simpan.php" value="simpan">
+                    <input type="submit" name="simpan" value="simpan">
                 </div>
             </form>
         </div>

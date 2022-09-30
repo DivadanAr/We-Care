@@ -47,14 +47,14 @@ $id = hexdec(uniqid());
             <div class="judul">
                 <p>Tambah Data Konsul</p>
             </div>
-            <form action="simpankonsul.php" method="post">
+            <form action="simpanpenyakit.php" method="post">
             <div class="form-edit">
                 <table>
                     <tr>
                         <th>Id</th>
                     </tr>
                     <tr>
-                        <td><input type="text" name="id" value="<?php echo $id?>" readonly></td>
+                        <td><input type="text" name="id_penyakit" value="<?php echo $id?>" readonly></td>
                     </tr>
                     <tr>
                         <th>Nama penyakit :</th>
@@ -71,10 +71,13 @@ $id = hexdec(uniqid());
                     <tr>
                         <th>keterangan :</th>
                     </tr>
+                    <tr>
+                        <td><input type="text" name="keterangan"></td>
+                    </tr>
                 </table>
             <div class="btn-simpan-cancel">
-                    <a class="" href="datakonsuk.php">cancel</a>
-                    <input type="submit" name="simpan.php" value="simpan">
+                    <a class="" href="datapenyakit.php">cancel</a>
+                    <input type="submit" name="simpanpenyakit" value="simpan">
                 </div>
             </form>
         </div>

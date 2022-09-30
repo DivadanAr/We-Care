@@ -40,9 +40,13 @@
     <div class="container">
         <div class="card-content">
             <p>Data Penyakit</p>
+            <div class="button">
+                <div><p><a href="formtambahpenyakit.php" class="btn-tmbh">Tambah Data penyakit</a></p></div>
+            </div>
             <div class="table">
                 <table class="table1">
                     <tr>
+                        <th>ID</th>
                         <th>NAMA</th>
                         <th>GAMBAR</th>
                         <th>KETERANGAN</th>
@@ -54,11 +58,12 @@
 
                     while($event = mysqli_fetch_array($query)){
                         echo "<tr>
+                        <td>$event[id_penyakit]</td>
                         <td>$event[nama_penyakit]</td>
                         <td>$event[gambar]</td>
                         <td>$event[keterangan]</td>
                         <td class='action'>
-                            <a href='hapus.php?nama_penyakit=".$event['nama_penyakit']."'><img src='assets/hapus.png'></a>
+                            <a href='hapus.php?id_penyakit=".$event['id_penyakit']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }

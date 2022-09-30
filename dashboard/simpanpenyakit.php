@@ -1,14 +1,10 @@
 <?php
     include 'koneksi.php';
 
-    if(isset($_POST['simpandokter'])){
-        $id_dokter = $_POST['id_dokter'];
-        $nama_dokter = $_POST['nama_dokter'];
-        $spesialisasi = $_POST['spesialisasi'];
-        $kelamin = $_POST['kelamin'];
-        $umur = $_POST['umur'];
-        $alamat = $_POST['alamat'];
-
+    if(isset($_POST['simpanpenyakit'])){
+        $id_penyakit = $_POST['id_penyakit'];
+        $nama_penyakit = $_POST['nama_penyakit'];
+        $keterangan = $_POST['keterangan'];
 
         $file = $_FILES['file'];
         $fileName = $_FILES['file']['name'];
@@ -27,7 +23,7 @@
                     $fileNameNew = uniqid('', true).".".$fileActualExt;
                     $fileDestination = 'uploads/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
-                    header('Location: datadokter.php?uploadberhasil');
+                    header('Location: dataevent.php?uploadberhasil');
             }else{
                 echo "error upload";
             }
@@ -36,12 +32,13 @@
         }
     }
 
-    $sqldokter = "INSERT INTO data_dokter (id_dokter, profil, nama_dokter, spesialisasi, kelamin, umur, alamat) VALUES ('$id_dokter', '$fileDestination', '$nama_dokter', '$spesialisasi', '$kelamin', '$umur', '$alamat')";
+    $sqldokter = "INSERT INTO penyakit (id_penyakit,  nama_penyakit, gambar, keterangan) VALUES ('$id_penyakit', '$nama_penyakit', '$fileDestination', '$keterangan')";
     $querydokter = mysqli_query($connect, $sqldokter);
 
     if($querydokter){
-        header('Location: datadokter.php');
+        header('Location: datapenyakit.php');
     }else{
-        header('Location: simpan.php?status=gagal');
+        header('Location: simpanpenyakit.php?status=gagal');
     }
+    
 ?>

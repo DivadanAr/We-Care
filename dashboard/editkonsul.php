@@ -9,12 +9,13 @@ if (isset($_POST['simpan'])){
     $penyakit = $_POST['penyakit'];
     $tanggal_konsul = $_POST['tanggal_konsul'];
 
-    $sql = "UPDATE data_konsul SET nama_dokter='$nama_dokter', nama_pasien='$nama_pasien', keluhan='$keluhan', tanggal_konsul='$tanggal_konsul', umur='$umur', alamat='$alamat' WHERE id_dokter='$id_dokter'";
+    $sql = "UPDATE data_konsul SET nama_dokter='$nama_dokter', nama_pasien='$nama_pasien', keluhan='$keluhan', tanggal_konsul='$tanggal_konsul' WHERE id_konsul='$id_konsul'";
     $query = mysqli_query($connect, $sql);
     if($query){
-        header('Location: datadokter.php');
+        header('Location: datakonsultan.php');
     }else{
-        header('Location: edit.php?status=gagal');
+        header('Location: editkonsul.php?status=gagal');
     }
 
+}
 ?>

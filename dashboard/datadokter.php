@@ -74,6 +74,7 @@
                     }
                     ?>
                 </table>
+                <img src="uploads/<?=$dokter['profil']?>">
             </div>
         </div>
     </div>
