@@ -66,8 +66,7 @@
                         <td>$dokter[telepon]</td>
                         <td>$dokter[alamat]</td>
                         <td class='action'>
-                            <a href='editdokter.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/edit.png'></a>
-                            <a href='hapusdokter.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/hapus.png'></a>
+                            <a href='hapus.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }

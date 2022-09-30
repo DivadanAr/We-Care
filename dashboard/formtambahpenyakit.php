@@ -2,8 +2,7 @@
 
 include 'koneksi.php';
 
-$idevent = hexdec(uniqid())
-
+$id = hexdec(uniqid());
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,31 +45,38 @@ $idevent = hexdec(uniqid())
             <div class="container">
         <div class="edit-content">
             <div class="judul">
-                <p>Tambah Data event</p>
+                <p>Tambah Data Konsul</p>
             </div>
-            <form action="simpanevent.php" method="post">
+            <form action="simpankonsul.php" method="post">
             <div class="form-edit">
                 <table>
                     <tr>
-                        <td><input type="hidden" name="id" value="<?php echo $idevent?>" readonly></td>
+                        <th>Id</th>
                     </tr>
                     <tr>
-                        <th>Nama Event :</th>
+                        <td><input type="text" name="id" value="<?php echo $id?>" readonly></td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="nama_event" valu></td>
+                        <th>Nama penyakit :</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="nama_penyakit"></td>
                     </tr>
                     <tr>
                         <th>gambar :</th>
                     </tr>
                     <tr>
-                        <td><input type="file" name="file"></td>
+                        <td><input type="file" name="gambar"></td>
                     </tr>
-            </table>
+                    <tr>
+                        <th>keterangan :</th>
+                    </tr>
+                </table>
             <div class="btn-simpan-cancel">
-                    <a class="" href="dataevent.php">cancel</a>
-                    <input type="submit" name="simpanevent" value="simpan">
+                    <a class="" href="datakonsuk.php">cancel</a>
+                    <input type="submit" name="simpan.php" value="simpan">
                 </div>
+            </form>
         </div>
     </div>
 </body>

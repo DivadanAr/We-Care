@@ -54,12 +54,11 @@
 
                     while($event = mysqli_fetch_array($query)){
                         echo "<tr>
-                        <td>$event[nama_pasien]</td>
+                        <td>$event[nama_pengguna]</td>
                         <td>$event[email]</td>
                         <td>$event[komentar]</td>
                         <td class='action'>
-                            <a href='editevent.php?id_pasien=".$event['id_pasien']."'><img src='assets/edit.png'></a>
-                            <a href='hapusevent.php?id_pasien=".$event['id_pasien']."'><img src='assets/hapus.png'></a>
+                            <a href='hapus.php?nama_pengguna=".$event['nama_pengguna']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }

@@ -53,7 +53,7 @@
             <div class="judul">
                 <p>Edit Data Dokter</p>
             </div>
-            <form action="edit.php" method="post">
+            <form action="editdokter.php" method="post">
             <div class="form-edit">
                 <table>
                     <tr>
@@ -100,7 +100,7 @@
         </form>
             <div class="btn-simpan-cancel">
                     <a class="" href="datadokter.php">cancel</a>
-                    <input type="submit" name="editdokter" value="simpan">
+                    <input type="submit" name="simpan" value="simpan">
                 </div>
         </div>
     </div>

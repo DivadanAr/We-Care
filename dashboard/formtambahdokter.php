@@ -45,7 +45,7 @@
             <div class="judul">
                 <p>Tambah Data Dokter</p>
             </div>
-            <form action="simpan.php" method="post">
+            <form action="simpandokter.php" method="post">
             <div class="form-edit">
                 <table>
                     <tr>

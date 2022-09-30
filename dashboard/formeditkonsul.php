@@ -89,7 +89,7 @@ if(mysqli_num_rows($query)  < 1){
                     </tr>
             </table>
             <div class="btn-simpan-cancel">
-                    <a class="" href="datakonsuk.php">cancel</a>
+                <a class="" href="datakonsuk.php">cancel</a>
                     <input type="submit" name="simpan.php" value="simpan">
                 </div>
             </form>

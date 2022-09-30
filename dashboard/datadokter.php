@@ -67,7 +67,7 @@
                         <td>$dokter[umur]</td>
                         <td>$dokter[alamat]</td>
                         <td class='action'>
-                            <a href='formeditkonsul.php?id_dokter=".$dokter['id_dokter']."'><img src='assets/edit.png'></a>
+                            <a href='formeditdokter.php?id_dokter=".$dokter['id_dokter']."'><img src='assets/edit.png'></a>
                             <a href='hapus.php?id_dokter=".$dokter['id_dokter']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";

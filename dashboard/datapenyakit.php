@@ -58,8 +58,7 @@
                         <td>$event[gambar]</td>
                         <td>$event[keterangan]</td>
                         <td class='action'>
-                            <a href='editevent.php?id_pasien=".$event['id_pasien']."'><img src='assets/edit.png'></a>
-                            <a href='hapusevent.php?id_pasien=".$event['id_pasien']."'><img src='assets/hapus.png'></a>
+                            <a href='hapus.php?nama_penyakit=".$event['nama_penyakit']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }

@@ -1,9 +1,8 @@
 <?php
 
-include 'koneksi.php'
+include 'koneksi.php';
 
-$idkonsul = hexdec(uniqid())
-
+$idkonsul = hexdec(uniqid());
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,14 +47,14 @@ $idkonsul = hexdec(uniqid())
             <div class="judul">
                 <p>Tambah Data Konsul</p>
             </div>
-            <form action="simpan.php" method="post">
+            <form action="simpankonsul.php" method="post">
             <div class="form-edit">
                 <table>
                     <tr>
                         <th>Id Konsul</th>
                     </tr>
                     <tr>
-                        <td><input type="text" name="id_dokter" value="<?php echo $idkonsul?>" readonly></td>
+                        <td><input type="text" name="id_konsul" value="<?php echo $idkonsul?>" readonly></td>
                     </tr>
                     <tr>
                         <th>Nama Dokter :</th>

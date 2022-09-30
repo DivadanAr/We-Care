@@ -40,6 +40,9 @@
     <div class="container">
         <div class="card-content">
             <p>Data Konsultan</p>
+            <div class="button">
+                <div><p><a href="formtambahkonsul.php" class="btn-tmbh">Tambah Data Konsultan</a></p></div>
+            </div>
             <div class="table">
                 <table class="table1">
                     <tr>
@@ -64,7 +67,7 @@
                         <td>$konsul[tanggal_konsul]</td>
                         <td class='action'>
                             <a href='formeditkonsul.php?id_konsul=".$konsul['id_konsul']."'><img src='assets/edit.png'></a>
-                            <a href='hapuskonsultan.php?id_konsul=".$konsul['id_konsul']."'><img src='assets/hapus.png'></a>
+                            <a href='hapus.php?id_konsul=".$konsul['id_konsul']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }
