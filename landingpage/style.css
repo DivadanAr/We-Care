@@ -188,7 +188,9 @@ a{
     width: 270px;
     padding: 0;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);    
-
+}
+.dokter_card:hover{
+    box-shadow: 2px 2px 40px #4ED6BD;
 }
 
 .dokter_card h2{
@@ -273,7 +275,8 @@ a{
      font-weight: bold;
      font-size: 50px;
      margin: 0;
-     font-family: 'Ubuntu', sans-serif;
+     font-family: 'Poppins', sans-serif;
+
  }
  .background{
      width: 1265px;
@@ -347,17 +350,20 @@ a{
     font-family: 'Ubuntu', sans-serif;
     margin-top: 50px;
 }
-
 .gambarcomment {
     display: flex;
     align-items: center;
     margin-left: 400px;
     margin-top: 75px;
+    font-family: 'Ubuntu', sans-serif;
+
 }
 .gambarcomment p {
     font-weight: bold  ;
     font-size: 40px ;
     margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .gambarcomment img {
@@ -371,7 +377,7 @@ a{
 
 .comment {
     background-color: #F4F4F4;
-    height: 346px;
+    height: 380px;
     width: 732px;
     left: 398px;
     top: 4561px;
@@ -384,7 +390,9 @@ a{
     height: 42px;
     width: 661px;
     border-radius: 15px;
-    margin-left: 20px
+    margin-left: 20px;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .comment p{
@@ -404,17 +412,23 @@ a{
 .comment table tr:first-child td {
    padding-top: 10px;
    padding-left: 25px;
+   font-family: 'Poppins', sans-serif;
+
 }
 
 
 .comment table tr:nth-child(3) td {
     padding-top: 10px;
     padding-left: 25px;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .comment table tr:nth-child(5) td {
     padding-top: 10px;
     padding-left: 25px;
+    font-family: 'Poppins', sans-serif;
+
 }
 .comment textarea{
     padding-top: 10px;
@@ -437,19 +451,8 @@ a{
     background-color: #16E3BE;  
 }
 .comment tr:nth-child(7) td input:active{
-    background-color: #50ABF6   ;  
+    background-color: #50ABF6;  
 }
-
-body{
-	line-height: 1.5;
-	font-family: 'Ubuntu', sans-serif;
-}
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
 .container{
 	max-width: 1170px;
 	margin:auto;
@@ -462,7 +465,7 @@ ul{
 	list-style: none;
 }
 .footer{
-	background-color: #16E3BE;
+	background-image:  linear-gradient(120deg, #50A8FA 10%,#4ED6BD 80%);
     padding: 70px 0;
     margin-top: 100px
 }
@@ -506,7 +509,7 @@ ul{
 	margin-bottom: 10px;
 }
 .footer-col ul li a{
-	font-size: 16px;
+	font-size: 18px;
 	text-transform: capitalize;
 	color: #ffffff;
 	text-decoration: none;
