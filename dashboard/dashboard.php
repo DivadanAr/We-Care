@@ -39,14 +39,15 @@
         <div class="sidebar">
         <img src="assets/hospital.png" alt="">
         <ul class="menu">
-            <li><a href="dashboard.php"><img src="assets/home.png" alt=""></a></li>
-            <li><a href="datadokter.php"><img src="assets/doctor.png" alt=""></a></li>
-            <li><a href="datapasien.php"><img src="assets/patient.png" alt=""></a></li>
-            <li><a href="datakonsultan.php"><img src="assets/konsul.png" alt=""></a></li>
+            <li><a href="dashboard.php"><img src="assets/home.png" alt=""><p class="menutext">DASHBOARD</p></a></li>
+            <li><a href="datadokter.php"><img src="assets/doctor.png" alt=""><p class="menutext2">DATA DOKTER</p></a></li>
+            <li><a href="datapasien.php"><img src="assets/patient.png" alt=""><p class="menutext3">DATA PASIEN</p></a></li>
+            <li><a href="datakonsultan.php"><img src="assets/konsul.png" alt=""><p class="menutext4">DATA KONSULTAN</p></a></li>
         </ul>
         </div>
         <div class="navbar">
-            <button class="menu"><img src="assets/menu.png" alt=""></button>
+            <button class="menu" id="toggle-sidebar" onclick="myFunction()"><img src="assets/menu.png" alt=""></button>
+            <script src="main.js"></script>
         </div>
     </div>
     <div class="container">

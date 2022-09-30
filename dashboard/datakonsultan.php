@@ -51,17 +51,16 @@
     </div>
     <div class="container">
         <div class="card-content">
-            <p>Data Pasien</p>
+            <p>Data Konsultan</p>
             <div class="table">
                 <table class="table1">
                     <tr>
-                        <th>ID</th>
-                        <th>NAMA</th>
-                        <th>UMUR</th>
-                        <th>KELAMIN</th>
-                        <th>PENYAKIT</th>
-                        <th>TELEPON</th>
-                        <th>ALAMAT</th>
+                        <th>ID PASIEN</th>
+                        <th>NAMA PASIEN</th>
+                        <th>ID DOKTER</th>
+                        <th>NAMA DOKTER</th>
+                        <th>KELUHAN</th>
+                        <th>TANGGAL KONSUL</th>
                         <th>ACTION</th>
                     </tr>
                     <?php
@@ -72,14 +71,13 @@
                         echo "<tr>
                         <td>$dokter[id_pasien]</td>
                         <td>$dokter[nama_pasien]</td>
-                        <td>$dokter[umur]</td>
-                        <td>$dokter[jenis_kelamin]</td>
-                        <td>$dokter[penyakit]</td>
-                        <td>$dokter[telepon]</td>
-                        <td>$dokter[alamat]</td>
+                        <td>$dokter[id_dokter]</td>
+                        <td>$dokter[nama_dokter]</td>
+                        <td>$dokter[keluhan]</td>
+                        <td>$dokter[tanggal_konsul]</td>
                         <td class='action'>
-                            <a href='editdokter.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/edit.png'></a>
-                            <a href='hapusdokter.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/hapus.png'></a>
+                            <a href='editkonsultan.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/edit.png'></a>
+                            <a href='hapuskonsultan.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }
