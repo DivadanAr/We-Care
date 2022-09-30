@@ -1,5 +1,16 @@
 <?php
-    include 'koneksi.php';
+
+include 'koneksi.php';
+
+$id_konsul = $_GET['id_konsul'];
+$sql = "SELECT * FROM data_konsul WHERE id_konsul='$id_konsul'";
+$query = mysqli_query($connect, $sql);
+$konsul = mysqli_fetch_assoc($query);
+
+if(mysqli_num_rows($query)  < 1){
+    die("Data Tidak Ditemukan");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,42 +50,49 @@
     </div>
     <div class="container">
         <div class="card-content">
-            <p>Data Dokter</p>
-            <div class="button">
-                <div><p><a href="formtambahdokter.php" class="btn-tmbh">Tambah Data Dokter</a></p></div>
+            <div class="container">
+        <div class="edit-content">
+            <div class="judul">
+                <p>Tambah Data Konsul</p>
             </div>
-            <div class="table">
-                <table class="table1">
+            <form action="simpan.php" method="post">
+            <div class="form-edit">
+                <table>
                     <tr>
-                        <th>ID</th>
-                        <th>NAMA</th>
-                        <th>BIDANG</th>
-                        <th>KELAMIN</th>
-                        <th>UMUR</th>
-                        <th>ALAMAT</th>
-                        <th>ACTION</th>
+                        <td><input type="hidden" name="id_dokter" value="<?php echo $idkonsul?>"  value="<?php echo $konsul['id_konsul']?>" readonly></td>
                     </tr>
-                    <?php
-                    $sql = "SELECT * FROM data_dokter";
-                    $query = mysqli_query($connect, $sql);
-
-                    while($dokter = mysqli_fetch_array($query)){
-                        echo "<tr>
-                        <td>$dokter[id_dokter]</td>
-                        <td>$dokter[nama_dokter]</td>
-                        <td>$dokter[spesialisasi]</td>
-                        <td>$dokter[kelamin]</td>
-                        <td>$dokter[umur]</td>
-                        <td>$dokter[alamat]</td>
-                        <td class='action'>
-                            <a href='formeditkonsul.php?id_dokter=".$dokter['id_dokter']."'><img src='assets/edit.png'></a>
-                            <a href='hapus.php?id_dokter=".$dokter['id_dokter']."'><img src='assets/hapus.png'></a>
+                    <tr>
+                        <th>Nama Dokter :</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="nama_dokter" value="<?php echo $konsul['nama_dokter']?>"></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Pasien :</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="nama_pasien" value="<?php echo $konsul['nama_pasien']?>"></td>
+                    </tr>
+                    <tr>
+                        <th>keluhan :</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="keluhan"  value="<?php echo $konsul['keluhan']?>">
                         </td>
-                    </tr>";
-                    }
-                    ?>
-                </table>
-            </div>
+                    </tr>
+                    <tr>
+                        <th>Tanggal Konsul :</th>
+                    </tr>
+                    <tr>
+                        <td><input type="date" name="tanggal_konsul"  value="<?php echo $konsul['tanggal_konsul']?>" ></td>
+                    </tr>
+            </table>
+            <div class="btn-simpan-cancel">
+                    <a class="" href="datakonsuk.php">cancel</a>
+                    <input type="submit" name="simpan.php" value="simpan">
+                </div>
+            </form>
         </div>
     </div>
 </body>

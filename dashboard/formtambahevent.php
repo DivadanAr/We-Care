@@ -1,5 +1,9 @@
 <?php
-    include 'koneksi.php';
+
+include 'koneksi.php';
+
+$idevent = hexdec(uniqid())
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,41 +43,34 @@
     </div>
     <div class="container">
         <div class="card-content">
-            <p>Data Pasien</p>
-            <div class="table">
-                <table class="table1">
-                    <tr>
-                        <th>ID</th>
-                        <th>NAMA</th>
-                        <th>UMUR</th>
-                        <th>KELAMIN</th>
-                        <th>PENYAKIT</th>
-                        <th>TELEPON</th>
-                        <th>ALAMAT</th>
-                        <th>ACTION</th>
-                    </tr>
-                    <?php
-                    $sql = "SELECT * FROM data_pasien";
-                    $query = mysqli_query($connect, $sql);
-
-                    while($dokter = mysqli_fetch_array($query)){
-                        echo "<tr>
-                        <td>$dokter[id_pasien]</td>
-                        <td>$dokter[nama_pasien]</td>
-                        <td>$dokter[umur]</td>
-                        <td>$dokter[jenis_kelamin]</td>
-                        <td>$dokter[penyakit]</td>
-                        <td>$dokter[telepon]</td>
-                        <td>$dokter[alamat]</td>
-                        <td class='action'>
-                            <a href='editdokter.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/edit.png'></a>
-                            <a href='hapusdokter.php?id_pasien=".$dokter['id_pasien']."'><img src='assets/hapus.png'></a>
-                        </td>
-                    </tr>";
-                    }
-                    ?>
-                </table>
+            <div class="container">
+        <div class="edit-content">
+            <div class="judul">
+                <p>Tambah Data event</p>
             </div>
+            <form action="simpan.php" method="post">
+            <div class="form-edit">
+                <table>
+                    <tr>
+                        <td><input type="hidden" name="id" value="<?php echo $idevent?>" readonly></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Event :</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="nama_event" valu></td>
+                    </tr>
+                    <tr>
+                        <th>gambar :</th>
+                    </tr>
+                    <tr>
+                        <td><input type="file" name="file"></td>
+                    </tr>
+            </table>
+            <div class="btn-simpan-cancel">
+                    <a class="" href="dataevent.php">cancel</a>
+                    <input type="submit" name="simpanevent" value="simpan">
+                </div>
         </div>
     </div>
 </body>

@@ -141,7 +141,7 @@ table{
 .background2 tr:last-child td:first-child input:hover{
    text-transform: uppercase;
    box-shadow: 5px 5px 3px rgba(0, 255, 34, 0.485);
-   transition: .9s;
+   transition: .5s;
 }
 .background2 tr:last-child td:last-child input{
     background-color: #FD2828;
@@ -157,7 +157,7 @@ table{
 .background2 tr:last-child td:last-child input:hover{
     text-transform: uppercase;
     box-shadow: 5px 5px 3px rgba(255, 0, 0, 0.485);
-    transition: .9s;
+    transition: .5s;
  }
 .judul_form tr:last-child td{
     display: flex;

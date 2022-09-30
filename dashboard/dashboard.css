@@ -330,3 +330,84 @@ a{
     justify-content: space-evenly;
     align-items: center;
 }
+/* tombol tambah */
+.button{
+    margin: 0;
+}
+.btn-tmbh{
+    background-color: #29c536;
+    width: 150px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50px;
+    font-family: 'quicksand', sans-serif;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    font-weight: bold;
+    box-shadow: 2px 2px 3px #d4d4d4;
+}
+
+/* edit */
+.form-edit{
+    margin-left: 20px;
+}
+.form-edit table tr th{
+    text-align: left;
+    font-family: 'quicksand', sans-serif;
+    padding-top: 15px;
+}
+.form-edit table tr td{
+    text-align: left;
+    font-family: 'quicksand', sans-serif;
+}
+.form-edit table tr td input[type=text], input[type=number], textarea{
+    width: 1360px;
+    height: 30px;
+    padding-left: 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(206, 206, 206);
+    font-family: 'quicksand', sans-serif;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+}
+.form-edit table tr td input[type=radio]{
+    height: 15px;
+    width: 15px;
+    font-family: 'quicksand', sans-serif;
+}
+/* button simpan & cancel */
+.btn-simpan-cancel{
+    margin-left: 1210px;
+}
+.btn-simpan-cancel a{
+    text-decoration: none;
+    color: black;
+    border-radius: 20px;
+    background-color: red;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-family: 'quicksand', sans-serif;
+    text-transform: uppercase;
+    margin: 5px;
+    box-shadow: 2px 2px #d4d4d4;
+    cursor: pointer;
+    font-weight: 700;
+}
+.btn-simpan-cancel input{
+    background-color: #5BCC66;
+    width: 75px;
+    height: 30px;
+    font-size: 15px;
+    border: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin: 5px;
+    font-family: 'quicksand', sans-serif;
+    box-shadow: 2px 2px #d4d4d4;
+    cursor: pointer;
+    font-weight: 700;
+}
