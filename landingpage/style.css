@@ -1,0 +1,70 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+.container-navbar{
+    background-color: aquamarine;
+    height: 500px;    
+}
+.ul-navbar{
+    display: flex;
+    justify-content: right;
+    gap: 4rem;
+    list-style-type: none;
+    font-size: 20px;
+    padding: 15px;
+}
+.ul-navbar img{
+    height: 30px;
+    margin-right: 10px 10px 0 0;
+}
+.ul-navbar a{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+
+}
+.li-navbar:last-child{
+    margin-right: 50px;
+}
+.judul{
+    text-align: center;
+    font-size: 70px;
+    margin-top: 70px;
+    color: black;
+    font-family: 'Quicksand', sans-serif;
+}
+.judul h1 img{
+    height: 100px;
+    position: relative;
+    top: 3px;
+    margin: 0 8px;
+    
+}
+.consult{
+    display: flex;
+    justify-content: center;
+    margin: 70px auto;
+    background-color: white;
+    width:250px;
+    padding:20px;
+    border-radius: 15px;
+}
+.consult img{
+    height: 50px;
+    margin-right: 30px;
+}
+.consult a{
+    font-size: 40px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    color: black;
+}

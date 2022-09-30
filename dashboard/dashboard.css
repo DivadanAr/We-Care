@@ -1,0 +1,241 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: rgba(246, 246, 246, 0.938);
+}
+a{
+    text-decoration: none;
+}
+/* menubar */
+.menubar{
+    display: flex;
+}
+
+/* sidebar */
+.sidebar{
+    width: 80px;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    left: 0px;
+    overflow: hidden;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.823);
+    box-shadow: 1px 1px 2px rgb(229, 229, 229);
+}
+.sidebar ul{
+    width: 100%;
+    text-align: left;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+.sidebar img{
+    width: 50px;
+    margin: 20px 17px 30px;
+}
+.sidebar ul li img{
+    width: 30px;
+    margin: auto;
+}
+.sidebar ul li{
+    list-style-type: none;
+    line-height: 60px;
+    width: 200px;
+    height: 50px;
+    padding: 10px 27px;
+    display: flex;
+}
+.sidebar ul li a{
+    display: flex;
+}
+
+/* navbar */
+.navbar{
+    width: 100%;
+    height: 65px;
+    margin-left: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: content-box;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 0.778);
+    box-shadow: 1px 1px 4px rgb(197, 197, 197);
+}
+.navbar .menu{
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin-left: 15px;
+}
+.navbar .menu img{
+    width: 40px;
+}
+
+/* content */
+.content{
+    width: 1420px;
+    margin: 10px 10px 10px 90px;
+    display: flex;
+    gap: 20px;
+}
+.card-content{
+    width: 1430px;
+    height: 665px;
+    margin: 10px 10px 10px 90px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 1px 4px rgb(197, 197, 197);
+}
+.data-dokter,
+.data-pasien{
+    width: 415px;
+    height: 120px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 4px rgb(197, 197, 197);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: 20px;
+}
+.data-pasien img,
+.data-dokter img{
+    width: 70px;
+}
+.data-pasien .text,
+.data-dokter .text{
+    margin: -10px 0px 0px 20px;
+}
+.data-pasien p:first-child,
+.data-dokter p:first-child{
+    font-family: 'quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    color: rgb(107, 107, 107);
+    margin: 0;
+}
+.data-pasien p:last-child,
+.data-dokter p:last-child{
+    font-family: 'quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 0;
+}
+.recent{
+    width: 530px;
+    height: 295px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgb(197, 197, 197);
+    padding: 10px;
+    font-family: 'quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 20px;
+}
+.recent-consult{
+    width: 530px;
+    height: 295px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgb(197, 197, 197);
+    padding: 10px;
+    font-family: 'quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+}
+.recent p,
+.recent-consult p{
+    margin: 0px 15px;
+    color: rgb(107, 107, 107);
+}
+/* center content */
+.center-content{
+    position: absolute;
+    margin-top: 215px;
+    top: 0px;
+    margin-left: 90px;
+    width: 850px;
+    height: 510px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgb(197, 197, 197);
+}
+.graphic-class{
+    width: 830px;
+    height: 450px;
+}
+.graphic-class p{
+    margin-left: 20px;
+    margin-top: 10px;
+    font-size: 30px;
+    color: rgb(107, 107, 107);
+    font-weight: 700;
+    font-family: 'Quicksand', sans-serif;
+}
+.card-content p{
+    font-size: 30px;
+    margin: 0px 30px;
+    font-family: 'quicksand', sans-serif;
+    font-weight: 700;
+}
+.table{
+    margin: 30px auto;
+}
+.table .table1{
+    width: 1300px;
+
+} 
+.table1{
+    margin: 10px auto 0px;
+    color: #232323;
+    border-collapse: collapse;
+}
+.table1 tr th{
+    border: 1px solid rgb(200, 200, 200);
+    padding: 20px 40px;
+}
+.table1 td{
+    border: 1px solid rgb(200, 200, 200);
+    padding: 6px;
+}
+.table table tr th,
+.recent-consult table tr th{
+    font-size: 13px;
+    background-color: #232323;
+    color: rgb(255, 255, 255);
+    font-family: 'Quicksand', sans-serif;
+}
+.table table tr td,
+.recent-consult table tr td{
+    color: rgb(25, 25, 25);
+    font-family: 'Quicksand', sans-serif;
+}
+
+/* edit */
+.action a:first-child{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(87, 171, 255);
+    border-radius: 5px;
+}
+.action a:last-child{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 0, 0);
+    border-radius: 5px;
+}
+.action a img{
+    margin-top: 7px;
+    width: 15px;
+}
+.table table .action{
+    text-align: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
