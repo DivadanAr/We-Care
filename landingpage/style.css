@@ -1,17 +1,31 @@
-/* header */
 html{
     scroll-behavior: smooth;
 }
-*{
+body{
     margin: 0;
     padding: 0;
 }
 a{
     text-decoration: none;
 }
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    background-image: linear-gradient(240deg,#50A8FA 10%, #4ED6BD 95%);
+    width: 100%;
+    z-index: 999;
+}
+.logo img{
+    height: 50px;
+    margin-top: 8px;
+    margin-left: 8px;
+}
 .container-navbar{
-    background-color: aquamarine;
-    height: 500px;    
+    height: 70px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 .ul-navbar{
     display: flex;
@@ -19,7 +33,6 @@ a{
     gap: 4rem;
     list-style-type: none;
     font-size: 20px;
-    padding: 15px;
 }
 .ul-navbar img{
     height: 30px;
@@ -30,16 +43,36 @@ a{
     align-items: center;
     gap: 1rem;
     color: white;
+    transition: .5s;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+}
 
+.ul-navbar a:hover{
+    font-size: 25px;
+    transition: .5s;
+    padding-right: 13px;
 }
 .li-navbar:last-child{
     margin-right: 50px;
+}
+.header{
+    background-image: url(background.jpg);
+    background-size: cover;
+    height: 600px;
+}
+.pelapis{
+    width: 100%;
+    position: absolute;
+    height: 530px;
+    background-color: transparent;
+    background-image: linear-gradient(120deg,rgba(127, 255, 212, 0.25) 10%,rgba(0, 162, 255, 0.25) 95%);
 }
 .judul{
     text-align: center;
     font-size: 70px;
     margin-top: 70px;
-    color: black;
+    color: rgb(30, 30, 30);
     font-family: 'Quicksand', sans-serif;
 }
 .judul h1 img{
@@ -54,9 +87,11 @@ a{
     justify-content: center;
     margin: 70px auto;
     background-color: white;
-    width:250px;
+    width:270px;
     padding:20px;
     border-radius: 15px;
+    font-family: 'Quicksand', sans-serif;
+
 }
 .consult img{
     height: 50px;
@@ -69,7 +104,113 @@ a{
     align-items: center;
     color: black;
 }
+.consult:hover{
+    box-shadow: 5px 5px 1px rgba(255, 255, 255, 0.50);
+    margin-top: 100px;
+    transition: .4s;
+}
+.detail_penyakit{
+    margin-top: 100px;
+}
+.detail_penyakit img{
+    width: 503px;
+    height: 345px;
+    margin-left: 180px;
+    margin-top:88px;
+    position: absolute;
+    border-radius: 15px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25) ;
+}
+.text_detail {
+    background-color: white;
+    height: 500px;
+    width: 768px;
+    margin-left: 600px;
+    text-align: right;
+    box-sizing: border-box;
+    border-radius: 15px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25) ;
+}
+.text_detail h2{
+    padding: 50px 40px 0px 40px;
+    font-size: 50px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    margin: 0;
+}
+.text_detail p{
+    padding: 70px 30px 30px 100px;
+    font-family: 'ubuntu', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.head_dokter{
+    margin-top: 120px;
+    margin-left: 220px;
+    display: flex;
+    align-items: center;
+}
+.head_dokter .logo_doctors{
+    display: flex;
+}
+.head_dokter .judul_doctors{
+    display: flex;
+    align-items: center;
+}
+.head_dokter img{
+    height: 75px;
+}
+.head_dokter h3{
+    font-size: 50px;
+    font-family: 'Poppins', sans-serif;
+}
 
+
+.dokter{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 50px;
+    row-gap: 50px;
+    background-color: #efefef;
+    padding: 50px;
+    width: 65%;
+    margin: 0 auto;
+    border-radius: 50px;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);    
+}
+.dokter_card{
+    background-color: white;
+    padding-bottom: 0px;
+    border-radius: 15px;
+    width: 270px;
+    padding: 0;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);    
+
+}
+
+.dokter_card h2{
+    text-align: center;
+    font-family: 'quicksand', sans-serif;
+    font-size: 20px;
+    margin: 5px;
+    font-weight: 700;
+}
+.dokter_card p{
+    text-align: center;
+    font-family: 'quicksand', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    margin: 10px;
+}
+.dokter img{
+    height: 350px;
+    width: 270px;
+    border-radius: 15px;
+}
+/* ANDY */
 
 /* content1 */
 .tempatfoto{
