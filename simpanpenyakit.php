@@ -1,9 +1,10 @@
 <?php
     include 'koneksi.php';
 
-    if(isset($_POST['simpanevent'])){
-        $id = $_POST['id'];
-        $nama_event = $_POST['nama_event'];
+    if(isset($_POST['simpanpenyakit'])){
+        $id_penyakit = $_POST['id_penyakit'];
+        $nama_penyakit = $_POST['nama_penyakit'];
+        $keterangan = $_POST['keterangan'];
 
         $file = $_FILES['file'];
         $fileName = $_FILES['file']['name'];
@@ -15,14 +16,14 @@
         $fileExt = explode('.', $fileName);
         $fileActualExt = strtolower(end($fileExt));
 
-        $allowed = array('jpg','jpeg','png', 'pdf');
+        $allowed = array('jpg','jpeg','png','jfif','gif','psd','pdf','eps');
 
         if(in_array($fileActualExt, $allowed)){
             if($fileError === 0){
-                    $fileNameNew = uniqid('', true).".".$fileActualExt;
+                    $fileNameNew = $fileName;
                     $fileDestination = 'uploads/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
-                    header('Location: dataevent.php?uploadberhasil');
+                    header('Location: datapenyakit.php?uploadberhasil');
             }else{
                 echo "error upload";
             }
@@ -31,13 +32,13 @@
         }
     }
 
-    $sqldokter = "INSERT INTO event (id, gambar, nama_event) VALUES ('$id', '$fileDestination', '$nama_event')";
-    $querydokter = mysqli_query($connect, $sqldokter);
+    $sqlpenyakit = "INSERT INTO penyakit (id_penyakit,  nama_penyakit, gambar, keterangan) VALUES ('$id_penyakit', '$nama_penyakit', '$fileNameNew', '$keterangan')";
+    $querypenyakit = mysqli_query($connect, $sqlpenyakit);
 
-    if($querydokter){
-        header('Location: dataevent.php');
+    if($querypenyakit){
+        header('Location: datapenyakit.php');
     }else{
-        header('Location: simpan.php?status=gagal');
+        header('Location: simpanpenyakit.php?status=gagal');
     }
     
 ?>

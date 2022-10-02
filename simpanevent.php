@@ -1,14 +1,9 @@
 <?php
     include 'koneksi.php';
 
-    if(isset($_POST['simpandokter'])){
-        $id_dokter = $_POST['id_dokter'];
-        $nama_dokter = $_POST['nama_dokter'];
-        $spesialisasi = $_POST['spesialisasi'];
-        $kelamin = $_POST['kelamin'];
-        $umur = $_POST['umur'];
-        $alamat = $_POST['alamat'];
-
+    if(isset($_POST['simpanevent'])){
+        $id = $_POST['id'];
+        $nama_event = $_POST['nama_event'];
 
         $file = $_FILES['file'];
         $fileName = $_FILES['file']['name'];
@@ -20,14 +15,14 @@
         $fileExt = explode('.', $fileName);
         $fileActualExt = strtolower(end($fileExt));
 
-        $allowed = array('jpg','jpeg','png', 'pdf');
+        $allowed = array('jpg','jpeg','png','jfif','gif','psd','pdf','eps');
 
         if(in_array($fileActualExt, $allowed)){
             if($fileError === 0){
-                    $fileNameNew = uniqid('', true).".".$fileActualExt;
+                    $fileNameNew = $fileName;
                     $fileDestination = 'uploads/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
-                    header('Location: datadokter.php?uploadberhasil');
+                    header('Location: dataevent.php?uploadberhasil');
             }else{
                 echo "error upload";
             }
@@ -36,12 +31,13 @@
         }
     }
 
-    $sqldokter = "INSERT INTO data_dokter (id_dokter, profil, nama_dokter, spesialisasi, kelamin, umur, alamat) VALUES ('$id_dokter', '$fileDestination', '$nama_dokter', '$spesialisasi', '$kelamin', '$umur', '$alamat')";
-    $querydokter = mysqli_query($connect, $sqldokter);
+    $sqlevent = "INSERT INTO event (id, gambar, nama_event) VALUES ('$id', '$fileNameNew', '$nama_event')";
+    $queryevent = mysqli_query($connect, $sqlevent);
 
-    if($querydokter){
-        header('Location: datadokter.php');
+    if($queryevent){
+        header('Location: dataevent.php');
     }else{
         header('Location: simpan.php?status=gagal');
     }
+    
 ?>

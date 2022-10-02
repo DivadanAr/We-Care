@@ -1,8 +1,5 @@
 <?php
-
-include 'koneksi.php';
-
-$id = hexdec(uniqid());
+    include 'koneksi.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,49 +34,38 @@ $id = hexdec(uniqid());
         </div>
         <div class="navbar">
             <button class="menu" id="toggle-sidebar" onclick="myFunction()"><img src="assets/menu.png" alt=""></button>
+            <div><a href="formtambahevent.php" class="btn-tmbh"><p>+</p></a></div>
             <script src="main.js"></script>
         </div>
     </div>
     <div class="container">
         <div class="card-content">
-            <div class="container">
-        <div class="edit-content">
-            <div class="judul">
-                <p>Tambah Data Konsul</p>
+            <p>Data Event</p>
+            <div class="button">
             </div>
-            <form action="simpanpenyakit.php" method="post">
-            <div class="form-edit">
-                <table>
+            <div class="table">
+                <table class="table1">
                     <tr>
-                        <th>Id</th>
+                        <th>NAMA</th>
+                        <th class='gambar'>GAMBAR</th>
+                        <th>EDIT</th>
                     </tr>
-                    <tr>
-                        <td><input type="text" name="id_penyakit" value="<?php echo $id?>" readonly></td>
-                    </tr>
-                    <tr>
-                        <th>Nama penyakit :</th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="nama_penyakit"></td>
-                    </tr>
-                    <tr>
-                        <th>gambar :</th>
-                    </tr>
-                    <tr>
-                        <td><input type="file" name="gambar"></td>
-                    </tr>
-                    <tr>
-                        <th>keterangan :</th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="keterangan"></td>
-                    </tr>
+                    <?php
+                    $sql = "SELECT * FROM event";
+                    $query = mysqli_query($connect, $sql);
+
+                    while($event = mysqli_fetch_array($query)){
+                        echo "<tr>
+                        <td>$event[nama_event]</td>
+                        <td class='gambar'><img src='uploads/$event[gambar]' height='80px'></td>
+                        <td class='action' width='50px' height='100px'>
+                            <a href='hapus.php?id=".$event['id']."'><img src='assets/hapus.png'></a>
+                        </td>
+                    </tr>";
+                    }
+                    ?>
                 </table>
-            <div class="btn-simpan-cancel">
-                    <a class="" href="datapenyakit.php">cancel</a>
-                    <input type="submit" name="simpanpenyakit" value="simpan">
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </body>

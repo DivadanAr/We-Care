@@ -34,47 +34,37 @@
         </div>
         <div class="navbar">
             <button class="menu" id="toggle-sidebar" onclick="myFunction()"><img src="assets/menu.png" alt=""></button>
+            <div><a href="formtambahpenyakit.php" class="btn-tmbh"><p>+</p></a></div>
             <script src="main.js"></script>
         </div>
     </div>
     <div class="container">
         <div class="card-content">
-            <p>Data Dokter</p>
-            <div class="button">
-                <div><p><a href="formtambahdokter.php" class="btn-tmbh">Tambah Data Dokter</a></p></div>
-            </div>
+            <p>Data Penyakit</p>
             <div class="table">
                 <table class="table1">
                     <tr>
-                        <th>ID</th>
                         <th>NAMA</th>
-                        <th>BIDANG</th>
-                        <th>KELAMIN</th>
-                        <th>UMUR</th>
-                        <th>ALAMAT</th>
-                        <th>ACTION</th>
+                        <th class='gambar'>GAMBAR</th>
+                        <th>KETERANGAN</th>
+                        <th>EDIT</th>
                     </tr>
                     <?php
-                    $sql = "SELECT * FROM data_dokter";
+                    $sql = "SELECT * FROM penyakit";
                     $query = mysqli_query($connect, $sql);
 
-                    while($dokter = mysqli_fetch_array($query)){
+                    while($penyakit = mysqli_fetch_array($query)){
                         echo "<tr>
-                        <td>$dokter[id_dokter]</td>
-                        <td>$dokter[nama_dokter]</td>
-                        <td>$dokter[spesialisasi]</td>
-                        <td>$dokter[kelamin]</td>
-                        <td>$dokter[umur]</td>
-                        <td>$dokter[alamat]</td>
+                        <td>$penyakit[nama_penyakit]</td>
+                        <td class='gambar'><img src='uploads/$penyakit[gambar]' width='120px'></td>
+                        <td>$penyakit[keterangan]</td>
                         <td class='action'>
-                            <a href='formeditdokter.php?id_dokter=".$dokter['id_dokter']."'><img src='assets/edit.png'></a>
-                            <a href='hapus.php?id_dokter=".$dokter['id_dokter']."'><img src='assets/hapus.png'></a>
+                            <a href='hapus.php?id_penyakit=".$penyakit['id_penyakit']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }
                     ?>
                 </table>
-                <img src="uploads/<?=$dokter['profil']?>">
             </div>
         </div>
     </div>

@@ -26,7 +26,7 @@
             <li><a href="dashboard.php"><img src="assets/home.png" alt=""><p class="menutext">DASHBOARD</p></a></li>
             <li><a href="datadokter.php"><img src="assets/doctor.png" alt=""><p class="menutext2">DATA DOKTER</p></a></li>
             <li><a href="datapasien.php"><img src="assets/patient.png" alt=""><p class="menutext3">DATA PASIEN</p></a></li>
-            <li><a href="datakonsultan.php"><img src="assets/konsul.png" alt=""><p class="menutext4">DATA KONSULTAN</p></a></li>
+            <li><a href="datakonsul.php"><img src="assets/konsul.png" alt=""><p class="menutext4">DATA KONSULTAN</p></a></li>
             <li><a href="dataevent.php"><img src="assets/event.png" alt=""><p class="menutext4">DATA EVENT</p></a></li>
             <li><a href="datapenyakit.php"><img src="assets/penyakit.png" alt=""><p class="menutext4">DATA PENYAKIT</p></a></li>
             <li><a href="datakomentar.php"><img src="assets/comment.png" alt=""><p class="menutext4">DATA COMMENT</p></a></li>
@@ -39,27 +39,29 @@
     </div>
     <div class="container">
         <div class="card-content">
-            <p>Data Event</p>
-            <div class="button">
-                <div><p><a href="formtambahevent.php" class="btn-tmbh">Tambah Data event</a></p></div>
-            </div>
+            <p>Data Konsultan</p>
             <div class="table">
                 <table class="table1">
                     <tr>
-                        <th>NAMA</th>
-                        <th>GAMAR</th>
-                        <th>EDIT</th>
+                        <th>NAMA PASIEN</th>
+                        <th>NAMA DOKTER</th>
+                        <th>KELUHAN</th>
+                        <th>TANGGAL KONSUL</th>
+                        <th>ACTION</th>
                     </tr>
                     <?php
-                    $sql = "SELECT * FROM event";
+                    $sql = "SELECT * FROM data_konsul";
                     $query = mysqli_query($connect, $sql);
 
-                    while($event = mysqli_fetch_array($query)){
-                        echo "<tr>
-                        <td>$event[nama_event]</td>
-                        <td>$event[gambar]</td>
+                    while($konsul = mysqli_fetch_array($query)){
+                        echo "
+                    <tr>
+                    <td>$konsul[nama_pasien]</td>
+                    <td>$konsul[nama_dokter]</td>
+                        <td>$konsul[keluhan]</td>
+                        <td>$konsul[tanggal_konsul]</td>
                         <td class='action'>
-                            <a href='hapus.php?id=".$event['id']."'><img src='assets/hapus.png'></a>
+                            <a href='hapus.php?id_konsul=".$konsul['id_konsul']."'><img src='assets/hapus.png'></a>
                         </td>
                     </tr>";
                     }

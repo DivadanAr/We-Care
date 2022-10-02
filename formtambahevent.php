@@ -1,5 +1,9 @@
 <?php
-    include 'koneksi.php';
+
+include 'koneksi.php';
+
+$idevent = hexdec(uniqid())
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,37 +43,34 @@
     </div>
     <div class="container">
         <div class="card-content">
-            <p>Data Penyakit</p>
-            <div class="button">
-                <div><p><a href="formtambahpenyakit.php" class="btn-tmbh">Tambah Data penyakit</a></p></div>
+            <div class="container">
+        <div class="edit-content">
+            <div class="judul">
+                <p>Tambah Data event</p>
             </div>
-            <div class="table">
-                <table class="table1">
+            <form action="simpanevent.php" method="post" enctype="multipart/form-data">
+            <div class="form-edit">
+                <table>
                     <tr>
-                        <th>ID</th>
-                        <th>NAMA</th>
-                        <th>GAMBAR</th>
-                        <th>KETERANGAN</th>
-                        <th>EDIT</th>
+                        <td><input type="hidden" name="id" value="<?php echo $idevent?>" readonly></td>
                     </tr>
-                    <?php
-                    $sql = "SELECT * FROM penyakit";
-                    $query = mysqli_query($connect, $sql);
-
-                    while($event = mysqli_fetch_array($query)){
-                        echo "<tr>
-                        <td>$event[id_penyakit]</td>
-                        <td>$event[nama_penyakit]</td>
-                        <td>$event[gambar]</td>
-                        <td>$event[keterangan]</td>
-                        <td class='action'>
-                            <a href='hapus.php?id_penyakit=".$event['id_penyakit']."'><img src='assets/hapus.png'></a>
-                        </td>
-                    </tr>";
-                    }
-                    ?>
-                </table>
-            </div>
+                    <tr>
+                        <th>Nama Event :</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="nama_event" required="required" autocomplete="off"></td>
+                    </tr>
+                    <tr>
+                        <th>gambar :</th>
+                    </tr>
+                    <tr>
+                        <td><input type="file" name="file" required="required"></td>
+                    </tr>
+            </table>
+            <div class="btn-simpan-cancel">
+                    <a class="" href="dataevent.php">cancel</a>
+                    <input type="submit" name="simpanevent" value="simpan">
+                </div>
         </div>
     </div>
 </body>

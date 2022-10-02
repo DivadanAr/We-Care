@@ -1,16 +1,6 @@
 <?php
-
-include 'koneksi.php';
-
-$id_konsul = $_GET['id_konsul'];
-$sql = "SELECT * FROM data_konsul WHERE id_konsul='$id_konsul'";
-$query = mysqli_query($connect, $sql);
-$konsul = mysqli_fetch_assoc($query);
-
-if(mysqli_num_rows($query)  < 1){
-    die("Data Tidak Ditemukan");
-}
-
+    include 'koneksi.php';
+    $iddokter = hexdec(uniqid())
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,46 +43,59 @@ if(mysqli_num_rows($query)  < 1){
             <div class="container">
         <div class="edit-content">
             <div class="judul">
-                <p>Edit Data Konsul</p>
+                <p>Tambah Data Dokter</p>
             </div>
-            <form action="editkonsul.php" method="post">
+            <form action="simpandokter.php" method="post" enctype="multipart/form-data">
             <div class="form-edit">
                 <table>
                     <tr>
-                        <td><input type="hidden" name="id_dokter" value="<?php echo $idkonsul?>"  value="<?php echo $konsul['id_konsul']?>" readonly></td>
+                        <td><input type="hidden" name="id_dokter" value="<?php echo $iddokter?>" readonly></td>
                     </tr>
                     <tr>
                         <th>Nama Dokter :</th>
                     </tr>
                     <tr>
-                        <td><input type="text" name="nama_dokter" value="<?php echo $konsul['nama_dokter']?>"></td>
+                        <td><input type="text" name="nama_dokter" required="required" autocomplete="off"></td>
                     </tr>
                     <tr>
-                        <th>Nama Pasien :</th>
+                        <th>Spesialisasi :</th>
                     </tr>
                     <tr>
-                        <td><input type="text" name="nama_pasien" value="<?php echo $konsul['nama_pasien']?>"></td>
+                        <td><input type="text" name="spesialisasi" required="required" autocomplete="off"></td>
                     </tr>
                     <tr>
-                        <th>keluhan :</th>
+                        <th>Kelamin :</th>
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" name="keluhan"  value="<?php echo $konsul['keluhan']?>">
+                            <input type="radio" id="laki_laki" name="kelamin" value="laki-laki" required="required">
+                            <label for="laki_laki">Laki-laki</label>
+                            <input type="radio" id="perempuan" name="kelamin" value="perempuan"required="required">
+                            <label for="perempuan">Perempuan</label>
                         </td>
                     </tr>
                     <tr>
-                        <th>Tanggal Konsul :</th>
+                        <th>Umur :</th>
                     </tr>
                     <tr>
-                        <td><input type="date" name="tanggal_konsul"  value="<?php echo $konsul['tanggal_konsul']?>" ></td>
+                        <td><input type="number" name="umur" required="required" autocomplete="off"></td>
                     </tr>
+                    <th>Alamat :</th>
+                </tr>
+                <tr>
+                    <td><textarea name="alamat" cols="30" rows="1" required="required" autocomplete="off"></textarea></td>
+                </tr>
+                <tr>
+                    <th>Profile Picture :</th>
+                </tr>
+                <tr>
+                    <td><input type="file" name="file" required="required"></td>
+                </tr>
             </table>
             <div class="btn-simpan-cancel">
-                <a class="" href="datakonsuk.php">cancel</a>
-                    <input type="submit" name="simpan" value="simpan">
+                    <a class="" href="datadokter.php">cancel</a>
+                    <input type="submit" name="simpandokter" value="simpan">
                 </div>
-            </form>
         </div>
     </div>
 </body>

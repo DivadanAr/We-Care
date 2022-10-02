@@ -2,8 +2,7 @@
 
 include 'koneksi.php';
 
-$idevent = hexdec(uniqid())
-
+$id = hexdec(uniqid());
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,31 +45,38 @@ $idevent = hexdec(uniqid())
             <div class="container">
         <div class="edit-content">
             <div class="judul">
-                <p>Tambah Data event</p>
+                <p>Tambah Data Penyakit</p>
             </div>
-            <form action="simpanevent.php" method="post">
+            <form action="simpanpenyakit.php" method="post" enctype="multipart/form-data">
             <div class="form-edit">
                 <table>
                     <tr>
-                        <td><input type="hidden" name="id" value="<?php echo $idevent?>" readonly></td>
+                        <td><input type="hidden" name="id_penyakit" value="<?php echo $id?>" readonly></td>
                     </tr>
                     <tr>
-                        <th>Nama Event :</th>
+                        <th>Nama penyakit :</th>
                     </tr>
                     <tr>
-                        <td><input type="text" name="nama_event" valu></td>
+                        <td><input type="text" name="nama_penyakit" required="required" autocomplete="off"></td>
+                    </tr>
+                    <tr>
+                        <th>keterangan :</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="keterangan" required="required" autocomplete="off"></td>
                     </tr>
                     <tr>
                         <th>gambar :</th>
                     </tr>
                     <tr>
-                        <td><input type="file" name="file"></td>
+                        <td><input type="file" name="file" required="required"></td>
                     </tr>
-            </table>
+                </table>
             <div class="btn-simpan-cancel">
-                    <a class="" href="dataevent.php">cancel</a>
-                    <input type="submit" name="simpanevent" value="simpan">
+                    <a class="" href="datapenyakit.php">cancel</a>
+                    <input type="submit" name="simpanpenyakit" value="simpan">
                 </div>
+            </form>
         </div>
     </div>
 </body>

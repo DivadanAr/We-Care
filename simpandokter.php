@@ -1,10 +1,15 @@
 <?php
+
     include 'koneksi.php';
 
-    if(isset($_POST['simpanpenyakit'])){
-        $id_penyakit = $_POST['id_penyakit'];
-        $nama_penyakit = $_POST['nama_penyakit'];
-        $keterangan = $_POST['keterangan'];
+    if(isset($_POST['simpandokter'])){
+        $id_dokter = $_POST['id_dokter'];
+        $nama_dokter = $_POST['nama_dokter'];
+        $spesialisasi = $_POST['spesialisasi'];
+        $kelamin = $_POST['kelamin'];
+        $umur = $_POST['umur'];
+        $alamat = $_POST['alamat'];
+
 
         $file = $_FILES['file'];
         $fileName = $_FILES['file']['name'];
@@ -16,14 +21,14 @@
         $fileExt = explode('.', $fileName);
         $fileActualExt = strtolower(end($fileExt));
 
-        $allowed = array('jpg','jpeg','png', 'pdf');
+        $allowed = array('jpg','jpeg','png','jfif','gif','psd','pdf','eps');
 
         if(in_array($fileActualExt, $allowed)){
             if($fileError === 0){
-                    $fileNameNew = uniqid('', true).".".$fileActualExt;
+                    $fileNameNew = $fileName;
                     $fileDestination = 'uploads/'.$fileNameNew;
                     move_uploaded_file($fileTmpName, $fileDestination);
-                    header('Location: dataevent.php?uploadberhasil');
+                    header('Location: datadokter.php?uploadberhasil');
             }else{
                 echo "error upload";
             }
@@ -32,13 +37,13 @@
         }
     }
 
-    $sqldokter = "INSERT INTO penyakit (id_penyakit,  nama_penyakit, gambar, keterangan) VALUES ('$id_penyakit', '$nama_penyakit', '$fileDestination', '$keterangan')";
+    $sqldokter = "INSERT INTO data_dokter (id_dokter, profil, nama_dokter, spesialisasi, kelamin, umur, alamat) VALUES ('$id_dokter', '$fileNameNew', '$nama_dokter', '$spesialisasi', '$kelamin', '$umur', '$alamat')";
     $querydokter = mysqli_query($connect, $sqldokter);
 
     if($querydokter){
-        header('Location: datapenyakit.php');
+        header('Location: datadokter.php');
     }else{
-        header('Location: simpanpenyakit.php?status=gagal');
+        header('Location: simpandokter.php?status=gagal');
     }
-    
+
 ?>

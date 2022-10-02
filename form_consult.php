@@ -1,14 +1,9 @@
 <?php
+    include 'koneksi.php';
 
-include 'koneksi.php'
-
- $id_konsul = hexdec(uniqid())
-
+    $id_konsul = hexdec(uniqid());
+    $id_pasien = hexdec(uniqid())
 ?>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +16,13 @@ include 'koneksi.php'
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- font quicksan -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- icon -->
+    <link rel="icon" href="assetslandingpage/iconlink.png">
+
 </head>
 <body>
     <!-- Header -->
@@ -33,7 +35,7 @@ include 'koneksi.php'
                 <div class="menu">
                     <ul class="ul-navbar">
                         <li class="li-navbar">
-                            <a href="landingpage.html"class="a-navbar"> <img src="home logo.png" alt=""> Home</a>
+                            <a href="landingpage.php"class="a-navbar"> <img src="home logo.png" alt=""> Home</a>
                         </li>
                     </ul>
                 </div>
@@ -41,75 +43,76 @@ include 'koneksi.php'
         </div>
         <div class="background1"></div>
         <!-- form -->
-    <form action="">
+    <form action="simpankonsul.php" method="POST">
         <div class="background2">
             <table>
                 <div class="judul_form">
                     <h2>Form Konsultasi</h2>
                 </div>
                 <tr>
-                    <td>ID</td>
+                    <td><input type="hidden" value="<?php echo $id_konsul?>" readonly name="id_konsul"></td>
                 </tr>
                 <tr>
-                    <td><input type="text" value="<?php echo '$id_konsul'?>" readonly name="id_konsul"></td>
+                    <td><input type="hidden" value="<?php echo $id_pasien?>" name="id_pasien"></td>
                 </tr>
                 <tr>
                     <td>Nama :</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="nama_pasien"></td>
+                    <td><input type="text" name="nama_pasien" required="required" autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td>Umur :</td>
                 </tr>
                 <tr>
-                    <td><input type="number" name="umur"></td>
+                    <td><input type="number" name="umur" required="required" autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td>Jenis Kelamin :</td>
                 </tr>
                 <tr>
                     <td>
-                        <input type="radio" name="jenis_kelamin" value="laki-laki" name="kelamin">Laki-laki
-                        <input type="radio" name="jenis_kelamin" value="perempuan" name="kelamin">Perempuan
+                        <input type="radio" id="laki_laki" name="jenis_kelamin" value="laki-laki" >
+                        <label for="laki_laki">Laki-laki</label>
+                        <input type="radio" id="perempuan" name="jenis_kelamin" value="perempuan">
+                        <label for="perempuan">Perempuan</label>
                     </td>
                 </tr>
                 <tr>
                     <td>Alamat :</td>
                 </tr>
                 <tr>
-                    <td><textarea name="" id="" cols="80" rows="5" name="id_konsul" name="alamat"></textarea></td>
+                    <td><textarea name="alamat" id="" cols="80" rows="5" required="required" autocomplete="off"></textarea></td>
                 </tr>
                     <td>No Telepon :</td>
                 </tr>
                 <tr>
-                    <td><input type="number" name="id_konsul" name="telepon"></td>
+                    <td><input type="number" name="telepon" required="required" autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td>Keluhan :</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="id_konsul" name="keluhan"></td>
+                    <td><input type="text" name="keluhan" required="required" autocomplete="off"></td>
                 </tr>
                 <tr>
                     <td>Dokter :</td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="id_konsul" name="nama_dokter"></td>
+                    <td><input type="text" name="nama_dokter" required="required" autocomplete="off"></td>
                 </tr>
                 <tr>
-                    <td>Tanggal :</td>
+                    <td>Tanggal Konsultasi :</td>
                 </tr>
                 <tr>
-                    <td><input type="date" name="tanggal_konsul"></td>
+                    <td><input type="date" name="tanggal_konsul" required="required" autocomplete="off"></td>
                 </tr>
                 <tr>    
-                    <td><input type="submit"></td>
+                    <td><input type="submit" name="simpankonsul" value="simpan"></td>
                     <td><input type="reset"></td>
                 </tr>
             </table>
         </div>
-        
     </form>
 </body>
 </html>

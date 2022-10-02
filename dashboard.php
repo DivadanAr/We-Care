@@ -16,6 +16,9 @@
 
     $sql_konsultan_terbaru = "SELECT * FROM data_konsul ORDER BY id_konsul DESC LIMIT 3";
     $data_konsultan = mysqLi_query($connect, $sql_konsultan_terbaru);
+
+    $sql_komen = "SELECT * FROM komentar_pasien ORDER BY nama_pengguna DESC LIMIT 3";
+    $data_komen = mysqLi_query($connect, $sql_komen);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -78,9 +81,9 @@
                     <p>Recent Konsultan</p>
                     <table class="table1">
                         <tr>
-                            <th>Nama Siswa</th>
-                            <th>Nama Barang</th>
-                            <th>Tanggal Pinjam</th>
+                            <th>Nama Dokter</th>
+                            <th>Nama Pasien</th>
+                            <th>Tanggal Konsul</th>
                         </tr>
                         <?php
                         $data_konsultan = mysqLi_query ($connect,$sql_konsultan_terbaru);
@@ -95,10 +98,28 @@
                         }
                         ?>
                     </table>
-
                 </div>
-                <div class="recent">
-                    <p>Recent</p>
+                <div class="recent-comment">
+                    <p>Recent Comment</p>
+                    <table class="table1">
+                        <tr>
+                            <th>Nama Pasien</th>
+                            <th>Email</th>
+                            <th>komentar</th>
+                        </tr>
+                        <?php
+                        $data_komen = mysqLi_query ($connect,$sql_komen);
+                            while($data = mysqLi_fetch_array($data_komen)){
+                                echo "
+                        <tr>
+                            <td>$data[nama_pengguna]</td>
+                            <td>$data[email]</td>
+                            <td>$data[komentar]</td>
+                        </tr>
+                        ";
+                        }
+                        ?>
+                    </table>
                 </div>
             </div>
         </div>
