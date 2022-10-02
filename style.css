@@ -127,20 +127,18 @@ a {
     transition: .3s;
 }
 
-.detail_penyakit {
+.detail_penyakit{
     margin-top: 100px;
 }
-
-.detail_penyakit img {
+.detail_penyakit img{
     width: 503px;
     height: 345px;
     margin-left: 180px;
-    margin-top: 88px;
+    margin-top:88px;
     position: absolute;
     border-radius: 15px;
-    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.25) ;
 }
-
 .text_detail {
     background-color: white;
     height: 500px;
@@ -149,10 +147,9 @@ a {
     text-align: right;
     box-sizing: border-box;
     border-radius: 15px;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25) ;
 }
-
-.text_detail h2 {
+.text_detail h2{
     padding: 50px 40px 0px 40px;
     font-size: 50px;
     text-transform: uppercase;
@@ -161,13 +158,39 @@ a {
     font-weight: 700;
     margin: 0;
 }
-
-.text_detail p {
+.text_detail p{
     padding: 70px 30px 30px 100px;
     font-family: 'ubuntu', sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
+}
+.slide_fade{
+    -webkit-animation-name: fadedisease;
+    -webkit-animation-duration: .5s;
+    animation-name: fadedisease;
+    animation-duration: .5s;
+}
+@-webkit-keyframes fadedisease {
+    from{
+        opacity: .8;
+        
+    }
+
+    to {
+        opacity: 1;
+        
+    }
+}
+
+@keyframes fadedisease{
+    from{
+        opacity: .8;
+       
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .head_dokter {
@@ -250,8 +273,6 @@ a {
 .slideshow {
     box-sizing: border-box;
 }
-
-
 .container {
     padding: 100px 0 0 0;
 }
@@ -482,52 +503,55 @@ a {
 }
 
 /* content3 */
-.container3 {
-    margin-top: 100px;
-
+.content-slide-disease {
+    max-width: 1000px;
+    position: relative;
 }
-
-.disease {
+.container3{
+    margin-top: 100px;
+ }
+ .disease_bckg{
     width: 100%;
     height: 340px;
-    background-image: linear-gradient(120deg, #50A8FA 10%, #4ED6BD 80%);
+    background-image:  linear-gradient(120deg, #50A8FA 10%,#4ED6BD 80%);
     display: flex;
 }
-
-.disease p {
+.disease_bckg p{
     margin-top: 60px;
     margin-left: 10px;
     font-size: 25px;
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
 }
-
-.disease img {
+.disease_bckg img{
     width: 76px;
     height: 77px;
     margin-left: 38px;
     margin-top: 31px;
 }
-
-.penyakit {
+.disease{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 70px;
     margin-top: -200px;
     text-align: center;
 }
+.type_disease{
+    cursor: pointer;
+}
 
-.disease1 img {
+
+
+.type_disease img{
     width: 95px;
     height: 95px;
 }
-
-.disease1 p {
+.type_disease p{
     font-weight: bold;
     font-family: 'Ubuntu', sans-serif;
-    margin-top: 50px;
+    margin-top: 20px;
 }
-
+/* COMMENT */
 .gambarcomment {
     display: flex;
     align-items: center;

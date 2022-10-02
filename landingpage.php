@@ -2,6 +2,8 @@
 include 'koneksi.php';
 $event = mysqli_query($connect, "SELECT * FROM `event` ORDER BY id DESC LIMIT 2");
 $dokter = mysqli_query($connect, "SELECT * FROM `data_dokter`");
+$penyakit = mysqli_query($connect, "SELECT * FROM `penyakit` ORDER BY id_penyakit ASC LIMIT 4 ");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,13 +82,13 @@ $dokter = mysqli_query($connect, "SELECT * FROM `data_dokter`");
                 <div class="imgslide-fade">
                     <div class="numberslide">2 / 3</div>
                     <img src="assetslandingpage/rs_slide2.png" alt="">
-                    <div class="text">kamar Rumah Sakit</div>
+                    <div class="text">Kantor Administrasi</div>
                 </div>
 
                 <div class="imgslide-fade">
                     <div class="numberslide">3 / 3</div>
                     <img src="assetslandingpage/rs_slide3.jpg" alt="">
-                    <div class="text">Kantor Administrasi</div>
+                    <div class="text">Kamar Rumah Sakit</div>
                 </div>
 
                 <a class="prev" onclick="nextslide(-1)">&#10094;</a>
@@ -100,43 +102,7 @@ $dokter = mysqli_query($connect, "SELECT * FROM `data_dokter`");
         </div>
     </div>
 
-    <script>
-        var slideIndex = 1;
-        showSlide(slideIndex);
-
-        function nextslide(n) {
-            showSlide(slideIndex += n);
-        }
-
-        function dotslide(n) {
-            showSlide(slideIndex = n);
-        }
-
-        function showSlide(n) {
-            var i;
-            var slides = document.getElementsByClassName("imgslide-fade");
-            var dot = document.getElementsByClassName("dot");
-
-            if (n > slides.length) {
-                slideIndex = 1
-            }
-
-            if (n < 1) {
-                slideIndex = slides.length;
-            }
-
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-
-            for (i = 0; i < slides.length; i++) {
-                dot[i].clasName = dot[i].className.replace;
-                ("active")
-            }
-
-            slides[slideIndex - 1].style.display = "block"
-        }
-    </script>
+    <script src="sliders.js"></script>
     <!-- card text -->
     <div class="card-text-wecare">
         <p>WeCare Hospital @KitaPeduli</p>
@@ -166,37 +132,50 @@ $dokter = mysqli_query($connect, "SELECT * FROM `data_dokter`");
 
     <!-- content3 -->
     <div id="disease" class="container3">
-        <div class="disease">
+        <div class="disease_bckg">
             <img src="assetslandingpage/disease.png" alt="">
             <p>DISEASE</p>
         </div>
-        <div class="penyakit">
-            <div class="disease1">
+        <div class="disease">
+            <div onclick="disease_slide(1)" class="type_disease active">
                 <img src="assetslandingpage/red-eyes.png" alt="">
                 <p>INFECTED EYE</p>
-
             </div>
-            <div class="disease1">
+            <div onclick="disease_slide(2)" class="type_disease">
                 <img src="assetslandingpage/paru-paru.png" alt="">
-                <p>PENYAKIT PARU-PARU</p>
+                <p>BRONCHITIS</p>
             </div>
-            <div class="disease1">
+            <div onclick="disease_slide(3)" class="type_disease">
                 <img src="assetslandingpage/covid19.png" alt="">
                 <p>COVID 19</p>
             </div>
+            <div onclick="disease_slide(4)" class="type_disease">
+                <img src="assetslandingpage/hypertension.png" alt="">
+                <p>HYPERTENSION</p>
+            </div>
         </div>
-    </div>
+</div>
 
-    <div class="detail_penyakit">
-        <img src="assetslandingpage/penyakit-mata irited.jpg" alt="">
-        <div class="text_detail">
-            <h2>Infection eye</h2>
-            <p>Infeksi mata adalah suatu kondisi atau penyakit mata yang disebabkan oleh mikroorganisme (mikroba) yang
-                tumbuh dan berkembang biak pada mata. Mikroorganisme bisa berupa virus, bakteri, jamur, dan parasit.
-                Semuanya akan menimbulkan masalah, seperti mata merah, belekan, berair, dan sebagainya sesuai
-                karakteristik masing-masing.</p>
+        <div class="content-slide-disease">
+            
+            
+            <?php
+                while($infopenyakit = mysqli_fetch_array($penyakit)){
+                    echo "
+                    <div class='slide_fade'>
+                    <div class='detail_penyakit'>
+                        <img src='uploads/$infopenyakit[gambar]'>
+                        <div class='text_detail'>
+                            <h2>$infopenyakit[nama_penyakit]</h2>
+                            <p>$infopenyakit[keterangan]</p>
+                        </div>
+                    </div>
+                </div>
+                    ";
+                }
+            ?>
         </div>
-    </div>
+    <script src="slidedisease.js">  </script>
     <div id="dokter" class="head_dokter">
         <div class="logo_doctors">
             <img src="assetslandingpage/hospital.png" alt="">
